@@ -1,10 +1,11 @@
 # overlord
 
-A Clojure library designed to ... well, that part is up to you.
+A repository for Commonwealth 2015 project week. It contains lots of messy code that was created while learning overtone.
+Credit: Owen Lynch and Jack Glynn.
 
-## Usage
+# Live Demonstration
 
-FIXME
+[https://www.youtube.com/watch?v=xngKvd5J5sw]
 
 ## License
 

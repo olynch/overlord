@@ -68,8 +68,9 @@
         next-beat (+ beat (* duration 4))]
     (case note
       -1 ()
-      (at (metro beat) (sampled-piano :note note :decay (* duration 8))))
-    (apply-by (metro next-beat) #'play [next-beat (rest notes)])))
+      (at (metro beat) (sampled-piano :amp 0.3 :note note :decay (* duration 8))))
+    ;(apply-by (metro next-beat) #'play [next-beat (rest notes)])
+    ))
 
 (defn transpose [steps notes]
   (map (fn [[note offset duration]] [(+ steps note) offset duration]) notes))
@@ -79,6 +80,7 @@
   ([melody n] (concat (transpose n melody) (lazy-seq (infinite-melody melody (+ 2 n))))))
 
 (play (metro) (infinite-melody top))
+(stop)
 (defn infinite-play [melody]
   (play (metro) (infinite-melody melody)))
 (map infinite-play (map (partial transpose -2) [top middle base]))
